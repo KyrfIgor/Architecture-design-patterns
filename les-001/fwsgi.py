@@ -1,12 +1,3 @@
-def func():
-    print('test')
-
-func()
-
-
-class NewClass:
-    def __call__(self, *args, **kwargs):
-        pass
-
-obj = NewClass()
-obj()
+def application(environ, start_response):
+    start_response('200 OK', [('Content-Type', 'text/html')])
+    return [b'Hello world from a simple WSGI application!']
